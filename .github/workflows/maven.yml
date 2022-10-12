@@ -34,12 +34,11 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
       - name: Build and push
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v2
         with:
           context: .
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/java-demo-app:1.0
-          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/java-demo-app:buildcache
-          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/java-demo-app:buildcache,mode=max
+
 
