@@ -38,3 +38,5 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/java-demo-app:1.0
+          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/java-demo-app:buildcache
+          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/java-demo-app:buildcache,mode=max
