@@ -29,7 +29,8 @@ jobs:
         uses: mr-smithers-excellent/docker-build-push@v4
         with:
           image: asadiqbal6019/java-demo-app
-          tags: v1.0
+          tags: 1.0
+          dockerfile: Dockerfile
           registry: docker.io
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.secrets.DOCKER_HUB_ACCESS_TOKEN }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
